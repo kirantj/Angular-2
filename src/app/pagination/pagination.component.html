@@ -1,0 +1,36 @@
+<br><br><br><br><br><br>
+<div class="container">
+  <h4>pagination with list group</h4>
+  
+    <ul>
+        <li *ngFor="let itemm of collection | paginate: { id: 'coll', itemsPerPage: 4, currentPage: p }"> {{itemm.nam}} </li>
+    </ul>  
+
+    <pagination-controls id='coll' (pageChange)="p = $event"></pagination-controls>
+
+    <br>
+
+    <h4>Pagination with table</h4>
+
+    <table class="table table-bordered">
+        <tr>
+           <th>ID</th>
+           <th>Name</th>
+           <th>Designation</th>
+           <th>Place</th>
+        </tr>
+        <tr *ngFor="let item of list | paginate: { id: 'lst', itemsPerPage: 5, currentPage: q }">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.designation}}</td>
+            <td>{{item.place}}</td>
+        </tr>
+    </table>
+     <pagination-controls id='lst'
+                          (pageChange)="q = $event"
+                          previousLabel="Before"
+                          nextLabel="After">
+     </pagination-controls>
+    
+
+</div>

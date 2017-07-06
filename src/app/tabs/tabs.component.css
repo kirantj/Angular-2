@@ -1,0 +1,21 @@
+.list-inline{
+  margin:24px 0px;
+}
+.tabs{
+   color: #31708f;
+   border:1px solid #ccc;
+   border-radius:4px;
+   padding:8px 22px;
+   cursor: pointer;
+   text-decoration: none;
+}
+.active a{
+  color: red;
+}
+.aaa{
+  padding:4px 12px;
+}
+.activeee{
+  background-color: #31708f;
+  color:#fff;
+}

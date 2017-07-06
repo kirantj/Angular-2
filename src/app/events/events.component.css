@@ -1,0 +1,15 @@
+.para_1{
+	margin: 10px;
+	text-align: justify;
+}
+.selected{
+	padding: 15px;
+    background: #3a7e9e;
+    color: #fff;
+}
+.mouseOver{
+	color: green;
+}
+.mouseLeave{
+	color: red;
+}

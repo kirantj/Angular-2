@@ -1,0 +1,123 @@
+<br><br><br><br><br><br><br>
+<div class="container">
+  
+  <h4>User details with repeating loop</h4>
+   <div class="table-responsive">
+       <table class="table table-bordered">
+         <thead>
+           <tr>
+             <th>index</th>
+             <th>Name</th>
+             <th>Designation</th>
+             <th>Skills</th>
+             <th>Place</th>
+             <th>Experience</th>
+             <th>Delete</th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr *ngFor="let detaill of detail; let i = index">
+             <td>{{i}}</td>
+             <td>{{detaill.name}}</td>
+             <td>{{detaill.designation}}</td>
+             <td>{{detaill.skills}}</td>
+             <td>{{detaill.place}}</td>
+             <td>{{detaill.experience}}</td>
+             <td><button class="btn btn-default" (click)="dlt(i)">X</button></td>
+           </tr>
+         </tbody>
+       </table>
+     </div>
+    
+     <hr>
+
+
+
+
+  <button (click)="toggledetails()" class="btn btn-success">{{showDetails ? "Hide Detals" : "Show Details"}}</button> <br><hr>
+  <h4>Add user an Array</h4>
+  <h4 *ngIf="error" style="color:#a94442">please click above button for details</h4>
+  <div *ngIf="showDetails">
+      <ul>
+         <li *ngFor="let user of users; let i = index"><button (click)="dlttt(i)" class="btn btn-default">X</button> &nbsp; {{user}} &nbsp;</li>
+      </ul>
+  </div>
+  <form>
+    <label>Add users</label> <br>
+    <input type="text" name="user" [(ngModel)]="nullll" #dtl> <button (click)="adduser(dtl.value)" class="btn btn-success">Add</button>
+  </form>
+  <br>
+  <br>
+  <hr>
+
+
+
+   
+     <h4>Add User on Object</h4>
+    <form class="form-inline">
+        <div class="form-group">
+            <input type="text" class="form-control" id="name" [(ngModel)]="details.name" name="name" placeholder="Name" #change>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="designation" [(ngModel)]="details.designation" name="designation" placeholder="Designation">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="skills" [(ngModel)]="details.skills" name="skills" placeholder="Skills">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="place" [(ngModel)]="details.place" name="place" placeholder="Place">
+        </div>
+        
+        <button *ngIf="addData" type="submit" (click)="data()" class="btn btn-default">Add</button>
+        <button *ngIf="save" type="submit" (click)="saveUser(change.value)" class="btn btn-default">Update</button>
+    </form>
+
+   <!-- <form class="form-inline">
+        <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="name" name="name" placeholder="Name">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="designation" name="designation" placeholder="Designation">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="skills" name="skills" placeholder="Skills">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="place" name="place" placeholder="Place">
+        </div>
+        
+        <button type="submit" (click)="data()" class="btn btn-default">Save</button>
+    </form> -->
+
+
+    <br>
+       <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>index</th>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Skills</th>
+                <th>Place</th>
+                <th>Experience</th>
+                <th><button (click)="addUser()" class="btn btn-primary">Add User</button></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let detail of details; let i = index">
+                <td>{{i}}</td>
+                <td>{{detail.name}}</td>
+                <td>{{detail.designation}}</td>
+                <td>{{detail.skills}}</td>
+                <td>{{detail.place}}</td>
+                <td>{{detail.experience}}</td>
+                <td>
+                    <button class="btn btn-default" (click)="edit(detail)">Edit</button> / <button class="btn btn-default" (click)="delete(i)">Delete</button> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+</div>

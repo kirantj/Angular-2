@@ -1,0 +1,64 @@
+<br><br><br><br><br><br>
+<div class="container">
+<h3>Attribute Directives</h3>
+<br>
+  <h4>Highlight Directive</h4>
+  <p myHighlight class="custum_style">This is paragraph tag Highlight me!</p>
+  <h4 myHighlight>This is Header tag Highlight me!</h4>
+
+  <br>
+  <h4>Mouse Hover Directive</h4>
+  <p mouseEvent>This is paragraph tag Highlight me!</p>
+  <h4 mouseEvent>This is Header tag Highlight me!</h4>
+
+  <br>
+  <h4>Pick a highlight color</h4>
+  <div>
+    <input type="radio" name="colors" (click)="color='lightgreen'">Green
+    <input type="radio" name="colors" (click)="color='yellow'">Yellow
+    <input type="radio" name="colors" (click)="color='cyan'">Cyan
+  </div>
+  <p [select-radio]="color" style="margin-top:10px;">Without default color!</p>
+  <p [select-radio]="color" defaultColor="violet" style="margin-top:10px;">With default color</p>
+
+  <br>
+  <br>
+  <h3>Structural Directives</h3>
+  <br>
+
+  <h4>*ngIf true and false.</h4>
+  <p *ngIf="true">Expression is true and ngIf is true. This paragraph is in the DOM.</p>
+  <p *ngIf="false">Expression is false and ngIf is false. This paragraph is not in the DOM.</p>
+  <br>
+
+  <h4>style display none,block.</h4>
+  <p [style.display]="'block'">Expression is block and display is block. This paragraph is in the DOM.</p>
+  <p [style.display]="'none'">Expression is none and display is none. This paragraph is not in the DOM.</p>
+  <p [style.color]="'green'">Expression is green and color is green. This paragraph color will changes to green.</p>
+  <br>
+
+  <h4>*ngIf condition.</h4>
+  <p *ngIf='condition'>Condition is true. This paragraph will be visable</p>
+  <br>
+
+  <h4>Switch condition.</h4>
+  <div [ngSwitch]="colors">
+     <p *ngSwitchCase="'green'">When condition is green. This paragraph will be visable</p>
+     <p *ngSwitchCase="'red'">When condition is red. This paragraph will be visable</p>
+     <p *ngSwitchDefault>When condition not satisfied. This paragraph will be visable</p>
+  </div>
+  <br>
+
+  <h4>Switch condition using Array Property.</h4>
+  <div [ngSwitch]="persons">
+     <p *ngSwitchCase="'kiran'">When condition is KIRAN. This paragraph will be visable</p>
+     <p *ngSwitchCase="'teja'">When condition is TEJA. This paragraph will be visable</p>
+     <p *ngSwitchCase="'sam'">When condition is SAM. This paragraph will be visable</p>
+     <p *ngSwitchCase="'Ram'">When condition is RAM. This paragraph will be visable</p>
+     <p *ngSwitchCase="'Suresh'">When condition is SURESH. This paragraph will be visable</p>
+     <p *ngSwitchDefault>When condition not satisfied. This paragraph will be visable</p>
+  </div>
+
+
+
+</div>

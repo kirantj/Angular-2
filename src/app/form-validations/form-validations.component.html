@@ -1,0 +1,77 @@
+<br><br><br><br><br>
+<div class="container">
+  <br>
+  <h2>Form Validation</h2>
+  <form #formvalid="ngForm">
+    <div class="form-group">
+      <label for="fname">First Name</label>
+      <input type="text" class="form-control" id="fname" minlength="5" maxlength="30" required placeholder="Enter First Name" name="fname" [(ngModel)]="model.fname" #fname="ngModel">
+      <div *ngIf="fname.errors && (fname.dirty || fname.touched)" class="alert alert-danger">
+         <div [hidden]="!fname.errors.required">
+            First name is required
+         </div>
+         <div [hidden]="!fname.errors.minlength">
+            Minimun 5 charecters is required
+         </div>
+         <div [hidden]="!fname.errors.maxlength">
+            Maximun 30 charecters is required
+         </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="lname">Last Name</label>
+      <input type="text" class="form-control" id="lname" placeholder="Enter Last Name" minlength="3" maxlength="30" required name="lname" [(ngModel)]="model.lname" #lname="ngModel">
+      <div *ngIf="lname.errors && (lname.dirty || lname.touched)" class="alert alert-danger">
+         <div [hidden]="!lname.errors.required">
+            Last name is required
+         </div>
+         <div [hidden]="!lname.errors.minlength">
+            Minimun 3 charecters is required
+         </div>
+         <div [hidden]="!lname.errors.maxlength">
+            Maximun 30 charecters is required
+         </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="mobile">Mobile number</label>
+      <input type="text" class="form-control" id="mobile" pattern="[7|8|9][0-9]{9}" placeholder="Enter Mobile number" required name="mobile" [(ngModel)]="model.mobile" #mobile="ngModel">
+      <div *ngIf="mobile.errors && (mobile.dirty || mobile.touched)" class="alert alert-danger">
+         <div [hidden]="!mobile.errors.required">
+            Mobile number is required
+         </div>
+         <div [hidden]="!mobile.errors.pattern">
+             Please enter correct Mobile number
+         </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email Id</label>
+      <input type="email" class="form-control" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter Email Id" required name="email" [(ngModel)]="model.email" #email="ngModel">
+      <div *ngIf="email.errors && (email.dirty || email.touched)" class="alert alert-danger">
+         <div [hidden]="!email.errors.required">
+            Email Id is required
+         </div>
+         <div [hidden]="!email.errors.pattern">
+            Please enter correct email id
+         </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="psd">Password</label>
+      <input type="text" class="form-control" id="psd" placeholder="Enter Password" required name="psd" [(ngModel)]="model.psd" #psd="ngModel">
+      <div *ngIf="psd.errors && (psd.dirty || psd.touched)" class="alert alert-danger">
+         <div [hidden]="!psd.errors.required">
+            Password is required
+         </div>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]='!formvalid.form.valid' class="btn btn-default">Submit</button>
+    <a routerLink="/app-login-valid" class="btn btn-group">Cancel</a>
+  </form>
+ <br>
+ <!--  <div>
+     <p>{{currentform}}</p>
+  </div> -->
+</div>

@@ -1,0 +1,11 @@
+table thead th{
+  background: #ccc;
+}
+.sorting table thead th{
+  cursor: pointer;
+  background: #ccc;
+}
+.sorting table thead th:hover{
+   background: #31708f;
+   color:#fff;
+}

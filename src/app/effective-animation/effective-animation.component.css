@@ -1,0 +1,14 @@
+p {
+    width:200px;
+    background:lightgray;
+    padding:20px;
+    font-size:1.5em;
+    margin: 0px;
+    cursor: pointer;
+  }
+  .room{
+  height:200px;
+  width:200px;
+  background-color: black;
+  border:1px solid #000;
+}

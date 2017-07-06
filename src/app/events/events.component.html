@@ -1,0 +1,51 @@
+<br><br><br><br><br><br>
+<div class="container">
+<div>
+ <h3>Count : {{ count }}</h3>
+ <button class="btn btn-success" (click)="increment()">Increment</button>
+ <button class="btn btn-danger" (click)="decrement()">Decrement</button>
+</div>
+<hr>
+<br>
+
+<h4>Click Event</h4>
+<button class="btn btn-primary" (click)="changeColor()">Click me at once!</button> &nbsp;&nbsp;
+<span>{{clicked_button}}</span>
+
+<hr>
+
+<h4>Double Click Event</h4>
+<button class="btn btn-primary" (dblclick)="dblclickk()">Click me at twice!</button> &nbsp;&nbsp;
+<span>{{dubl_click}}</span>
+
+<hr>
+
+<h4>Toggle Class</h4>
+<button class="btn btn-primary" (click)="onClick()">Toggle button</button>
+<p [class.selected]="wasClicked" class="para_1">Nunc elementum ex ut tortor sagittis, ac laoreet magna rhoncus. In lectus arcu, molestie in ullamcorper in, volutpat vel elit. Pellentesque nibh urna, molestie non lacus ut, dapibus accumsan risus. Ut viverra tellus sed tortor ultrices blandit. Nullam vel nunc commodo, luctus massa nec, dapibus odio. Praesent hendrerit arcu est, eu finibus ante egestas eu. Suspendisse consectetur sodales turpis, a hendrerit arcu convallis eget. Proin varius purus et erat ultrices, vitae fermentum odio elementum. In ipsum tellus, maximus id augue consequat, congue consectetur urna. Integer venenatis commodo turpis, sit amet iaculis urna iaculis quis. Vestibulum a ante ac ex scelerisque rutrum a sit amet lorem. Quisque elementum maximus nisl, et mollis nulla blandit et. Sed sagittis arcu a placerat varius. Sed auctor risus tristique odio congue lacinia. Integer pellentesque mi ipsum, id sollicitudin ipsum venenatis a. Integer laoreet dictum arcu ac dignissim.</p>
+
+<hr>
+
+<h4>Mouse hover</h4>
+<span (mouseover)="overEvent()" (mouseleave)="leaveEvent()">Mouse over event and mouse leave event</span>
+<p><span [class.mouseOver]="ooverr">{{oover}}</span> <span [class.mouseLeave]="lleavee">{{lleave}}</span></p>
+
+<hr>
+
+<h4>KeyUp and KeyPress</h4>
+<input type="text" (keypress)="keyPress()" (keyup)="keyUp()"/>
+<p><span>{{keyPresss}}</span> <span>{{keyUpp}}</span></p>
+
+<hr>
+
+<h4>Two way binding</h4>
+<input type="text" [ngModel]="mymodel" (keypress)="mymodel=$event.target.value"/><br>
+{{mymodel}}
+
+
+<br>
+<br>
+<br>
+<br>
+</div>
+

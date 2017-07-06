@@ -1,0 +1,90 @@
+<br><br><br><br><br><br>
+<div class="container">
+<h3>Built in Pipes</h3> <hr>
+<h4>Original string file {{namee}}</h4>
+<h4>Original to Uppercase {{namee | uppercase}}</h4>
+<h4>Original to Lowercase {{namee | lowercase}}</h4>
+<h4>Date Pipe {{birthday | date}}</h4>
+<h4>Date Pipe with modified {{birthday | date:"MM/dd/yy"}}</h4>
+<h4>Date Pipe {{birthday | date:format}}</h4>
+ <!-- <h4>Date Pipe {{namee | async}}</h4> -->
+<br>
+
+<h3>Filters example</h3>
+<div class="row">
+<div class="col-sm-6">
+<form id="filter">
+    <input type="text" class="form-control" placeholder="search" [(ngModel)]='term' name="first"/>
+</form>
+</div>
+</div>
+<br>
+
+<!-- <div class="col-sm-6" style="padding:0px;">
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let names of details | filter:term">{{names.name}} + {{names.designation}}</li>
+</ul>
+</div> -->
+<div class="table-responsive">
+   <table class="table table-bordered">
+       <thead>
+         <tr>
+          <th>Name</th>
+          <th>Designation</th>
+          <th>Place</th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr *ngFor="let names of details | filter:term">
+           <td>{{names.name}}</td>
+           <td>{{names.designation}}</td>
+           <td>{{names.place}}</td>
+        </tr>
+     </tbody>
+   </table>
+</div>
+<hr>
+
+<h3>Filter by number</h3>
+<span style="float:left;">0</span>
+<span>
+  <input type="range" min="0" max="100" [(ngModel)]="sliderValue" name="sliderValue" style="width:250px; float:left;" />
+</span>
+<span style="float:left;">100</span>
+<ul style="clear:both"><br>
+  <li *ngFor="let ppp of people | filterRange:sliderValue">{{ppp.nam}} +{{ppp.age}}</li>
+</ul>
+<br>
+
+<hr>
+<h3>Sorting (OrderBy)</h3>
+<div class="table-responsive sorting">
+   <table class="table table-bordered">
+       <thead>
+         <tr>
+          <th (click)="expression = 'name'; reverse = !reverse">Name</th>
+          <th (click)="expression = 'designation'; reverse = !reverse">Designation</th>
+          <th (click)="expression = 'place'; reverse = !reverse">Place</th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr *ngFor="let names of detailss | orderBy: expression : reverse">
+           <td>{{names.name}}</td>
+           <td>{{names.designation}}</td>
+           <td>{{names.place}}</td>
+        </tr>
+     </tbody>
+   </table>
+</div>
+
+<br>
+<hr>
+
+
+
+
+
+
+
+<br><br><br><br>
+</div>

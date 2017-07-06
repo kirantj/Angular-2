@@ -1,0 +1,68 @@
+<br><br><br><br><br><br>
+<div class="container">
+
+<h3>Tabs</h3>
+<ul class="list-inline">
+    <li><a (click)="tab=1" [class.activeee]="tab === 1"  class="tabs">Tab 1</a></li>
+    <li><a (click)="tab=2" [class.activeee]="tab === 2" class="tabs">Tab 2</a></li>
+    <li><a (click)="tab=3" [class.activeee]="tab === 3" class="tabs">Tab 3</a></li>
+    <li><a (click)="tab=4" [class.activeee]="tab === 4" class="tabs">Tab 4</a></li>
+</ul>
+
+<div>
+  <span [ngSwitch]="tab">
+      <p *ngSwitchCase="1" class="">Tab content 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu sem venenatis, scelerisque lacus eget, feugiat mi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur vitae massa eu est hendrerit blandit. Fusce iaculis elit a posuere molestie. Nulla laoreet posuere magna, id aliquam sem convallis a. Praesent rutrum nisl vitae turpis iaculis ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam faucibus ligula vitae augue bibendum, in volutpat quam sodales. Phasellus aliquet diam lectus. In tincidunt ligula nunc, eu faucibus nisl cursus et. Donec in quam ut est dapibus posuere. Etiam ut ligula ornare arcu sodales dignissim. Nulla enim justo, tempor et pellentesque quis, placerat a ligula. Nullam ac nunc sem. Maecenas maximus, arcu sed semper fermentum, ipsum risus ultricies lacus, vel dignissim odio lectus non eros. Duis vehicula pharetra vulputate.</p>
+      <p *ngSwitchCase="2" class="">Tab content 2 Vestibulum nibh mi, tincidunt sit amet nulla quis, feugiat cursus leo. Suspendisse molestie, eros at eleifend tristique, orci risus porttitor diam, quis iaculis lectus arcu ac ante. Curabitur sollicitudin orci non maximus lobortis. Vestibulum molestie dolor ultrices mauris ullamcorper, id maximus dolor tristique. Curabitur faucibus purus ut orci interdum, ac elementum felis venenatis. Maecenas quis mauris id libero pulvinar malesuada. Cras congue neque arcu, a fringilla sapien laoreet non. In hac habitasse platea dictumst. Proin vel ultrices dolor, non sodales dui. Nunc posuere consectetur erat, et sodales ipsum bibendum eget. Morbi pulvinar elementum lorem, sed ullamcorper eros imperdiet eget. Duis dictum dignissim turpis, ac mollis mi suscipit ut. Nullam dictum condimentum odio, a semper justo. Suspendisse at felis id lacus vulputate ullamcorper. Cras gravida vulputate rhoncus. Fusce sit amet risus tristique, pretium mauris sit amet, pulvinar purus.</p>
+      <p *ngSwitchCase="3" class="">Tab content 3 Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur volutpat mattis velit, non vulputate elit maximus semper. Phasellus non elit mattis, fringilla nunc vel, tristique erat. Vestibulum vel ultrices magna, in lobortis sem. In nulla tellus, malesuada sit amet tempor a, blandit vel eros. Suspendisse blandit scelerisque mi, ut molestie felis. Curabitur et dui fringilla, condimentum velit ut, luctus ex. Sed viverra malesuada dapibus. Cras id lorem non dui suscipit blandit eget nec velit. Aenean semper imperdiet magna fermentum dictum. Aliquam erat volutpat. Morbi feugiat turpis in pretium condimentum. Nunc vel tortor luctus, elementum ex vitae, laoreet enim. Integer viverra elementum lectus, a elementum sem viverra sit amet. Donec pulvinar eros nec lectus ullamcorper maximus.</p>
+      <p *ngSwitchCase="4" class="">Tab content 4 Etiam suscipit, urna ac cursus fermentum, ante elit efficitur orci, et vestibulum quam leo eu erat. Proin sed ligula ac erat faucibus congue sed id mauris. Nunc eu tristique dui. In quis placerat neque. Pellentesque quis urna ante. Donec aliquam diam nec libero porta cursus. Aenean ac magna nec nisi condimentum scelerisque. Nunc vitae odio massa. Praesent arcu eros, pharetra dapibus pellentesque vehicula, maximus eu orci. Curabitur at ultrices metus. Phasellus sagittis tellus a ipsum dignissim suscipit. Mauris eget varius arcu. Vivamus facilisis ipsum sit amet elementum pretium.</p>
+      <p *ngSwitchDefault class="">Tab content 1 Sed sollicitudin a magna et ultrices. Aliquam maximus laoreet libero quis finibus. Curabitur viverra blandit ante, eget ultricies tellus accumsan sed. Nam ultricies sagittis quam vitae feugiat. Cras nunc enim, vulputate at dui id, interdum porttitor nisi. Donec elementum hendrerit eleifend. Donec rhoncus massa ligula, a rhoncus est ullamcorper eu. Cras cursus consequat aliquam.Sed sollicitudin a magna et ultrices. Aliquam maximus laoreet libero quis finibus. Curabitur viverra blandit ante, eget ultricies tellus accumsan sed. Nam ultricies sagittis quam vitae feugiat. Cras nunc enim, vulputate at dui id, interdum porttitor nisi. Donec elementum hendrerit eleifend. Donec rhoncus massa ligula, a rhoncus est ullamcorper eu. Cras cursus consequat aliquam.</p>
+  </span>
+</div>
+
+<br>
+<hr>
+
+<h3 class="tab1">Tabs 1</h3>
+<button (click)="shown = 'About'" [class.activeee]="shown === 'About'" type="button" class="aaa">About</button>
+<button (click)="shown = 'experience'" [class.activeee]="shown === 'experience'" type="button" class="aaa">experience</button>
+<button (click)="shown = 'trasution'" [class.activeee]="shown === 'trasution'" type="button" class="aaa">trasution</button>
+<br><br>
+<div *ngIf="shown === 'About'">
+    About content
+</div>
+<div *ngIf="shown === 'experience'">
+    Experience content
+</div>
+<div *ngIf="shown === 'trasution'">
+    Trasution content
+</div>
+
+<br>
+<hr>
+<h3>Tabs 2</h3>
+  <section>
+     <ul>
+       <li [class.active]="tabb === 'one'">
+          <a href (click)="tabb = 'one'">What you eat?</a>
+       </li>
+       <li [class.active]="tabb === 'two'">
+          <a href (click)="tabb = 'two'">Favorite juice?</a>
+       </li>
+       <li [class.active]="tabb === 'three'">
+          <a href (click)="tabb = 'three'">Do you close your eyes?</a>
+       </li>
+       <li [class.active]="tabb === 'four'">
+          <a href (click)="tabb = 'four'">f</a>
+       </li>
+       </ul>
+       <br><br>
+       <p *ngIf="tabb === 'one'">I eat chocolates</p>
+       <p *ngIf="tabb === 'two'">I drink mango juice</p>
+       <p *ngIf="tabb === 'three'">yes i close my eyes</p>
+       <p *ngIf="tabb === 'four'">f</p>
+
+  </section>
+
+
+
+</div>
